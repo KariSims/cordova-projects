@@ -26,6 +26,7 @@ function ajouterTache(){
                 taskList.appendChild(newItem);
                 t=0;
             }
+            console.log(tache);
         });
 
         $(newItem).on('swipeleft', function(){

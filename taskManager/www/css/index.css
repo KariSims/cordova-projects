@@ -8,3 +8,6 @@ label, #tache{
 .done{
     text-decoration: line-through;
 }
+#taskList, #taskListDone{
+    border-radius: 2%;
+}
