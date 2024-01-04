@@ -1,1 +1,1 @@
-"#My Cordova projects"
+#My Cordova projects
