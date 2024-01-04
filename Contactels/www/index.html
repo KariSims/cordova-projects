@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kont@cts</title>
+        <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css"> 
+        <!-- Remplacer la ligne 7 avec les fichiers (2-css) du theme custom 
+            + le new fichier 'structure'.css de jquery mobile -->
+        <link rel="stylesheet" href="css/index.css">
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div id="page-contact-list" data-role="page">
+            <div data-role="header">
+                <h1>Kont@cts</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div class="contacts-banniere">
+                    <div class="row">
+                        <div class="column left">
+                            <a href="#" data-icon="home" data-role="button" data-iconpos="notext" data-iconpos="left" alt= "home">Accueil</a>
+                        </div>
+                        <div class="column middle">
+                            <a href="#" data-role="button">Mes Contacts</a>
+                        </div>
+                        <div class="column right">
+                            <a href="#" data-icon="plus" data-role="button" data-iconpos="notext" alt= "Add">Ajouter</a>
+                        </div>
+                    </div>
+                </div>
+                <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher un contact">
+                    <!-- <li>
+                        <a href="#page-contact-details">
+                            <img src="../assets/img/contact.png" alt="contact">
+                            <h4><i>SP Sim's</i></h2>
+                            <h5><p><b>(+221) 77 181 95 34</b></p></h5>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>K@riSims &copy; 2023</h1>
+            </div>
+        </div>
+        <div id="page-contact-details" data-role="page">
+            <div data-role="header">
+                <a href="#page-contact-list" data-icon="back" data-role="button" data-iconpos="notext" data-iconpos="left" alt= "Return">Retour</a>
+                <h1>Kont@cts</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div data-role="header">
+                    <a href="#" data-icon="edit" data-role="button" data-iconpos="notext" alt= "Edit">Modifier</a>
+                    <h1>Détail Contact</h1>
+                    <a href="#" data-icon="delete" data-role="button" data-iconpos="notext" alt= "delete">Supprimer</a>
+                </div>
+                <ul id="contactDetail" data-role="listview" data-inset="true">
+                    
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>K@riSims &copy; 2023</h1>
+            </div>
+        </div>
+    </body>
+</html>
+</html>

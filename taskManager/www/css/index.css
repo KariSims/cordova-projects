@@ -1,0 +1,10 @@
+body{
+    background-color: #edf9dc;
+}
+label, #tache{
+    text-align: center;
+    color: black;
+}
+.done{
+    text-decoration: line-through;
+}

@@ -1,0 +1,21 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/SimsPhoneword/SimsPhoneword/bin
+/SimsPhoneword/SimsPhoneword/obj
+
+#taskManager
+/taskManager/node_modules
+#/taskManager/platforms
+
+#Contactel
+/Contactels/node_modules
+/Contactels/platforms
+
+#ToDoList
+/ToDoList/node_modules
+/ToDoList/platforms
+
+#firstProject
+/ProjectOne/node_modules
+/ProjectOne/platforms
