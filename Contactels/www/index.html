@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Contact'Tel</title>
         <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css"> 
-        <!-- Remplacer la ligne 7 avec les 2 fichiers css du theme custom 
+        <!-- Remplacer la ligne 7 avec les 2 fichiers css) du theme custom 
             + le new fichier 'structure'.css de jquery mobile -->
         <link rel="stylesheet" href="css/index.css">
         <script src="lib/jquery.min.js"></script>
@@ -19,18 +19,10 @@
                 <h1>Contact'Tel</h1>
             </div>
             <div role="main" class="ui-content">
-                <div class="contacts-banniere">
-                    <div class="row">
-                        <div class="column left">
-                            <a href="#" data-icon="home" data-role="button" data-iconpos="notext" data-iconpos="left" alt= "home">Accueil</a>
-                        </div>
-                        <div class="column middle">
-                            <a href="#" data-role="button">Mes Contacts</a>
-                        </div>
-                        <div class="column right">
-                            <a href="#" data-icon="plus" data-role="button" data-iconpos="notext" alt= "Add">Ajouter</a>
-                        </div>
-                    </div>
+                <div data-role="header">
+                    <a href="#" data-icon="home" data-role="button" data-iconpos="notext" data-iconpos="left" alt= "home">Accueil</a>
+                    <h1>Mes Contacts</h1>
+                    <a href="#page-AddContact" data-icon="plus" data-role="button" data-iconpos="notext" alt= "Add">Ajouter</a>
                 </div>
                 <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher un contact">
                     <!-- <li>
@@ -59,6 +51,37 @@
                 </div>
                 <ul id="contactDetail" data-role="listview" data-inset="true">
                     
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h1>By @Bantu &copy; 2023</h1>
+            </div>
+        </div>
+        <div id="page-AddContact" data-role="page">
+            <div data-role="header">
+                <a href="#page-contact-list" data-icon="back" data-role="button" data-iconpos="notext" data-iconpos="left" alt= "Accueil">Accueil</a>
+                <h1>Contact'Tel</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div data-role="header">
+                    <a href="#page-contact-list" data-icon="delete" data-role="button" data-iconpos="notext" alt= "cancel">Annuler</a>
+                    <h1>Enregistrer le Contact</h1>
+                    <a href="#" data-icon="check" data-role="button" data-iconpos="notext" alt= "register">Enregistrer</a>
+                </div>
+                <ul id="" data-role="listview" data-inset="true">
+                    <form id="">
+                        <input type="text" name="FirstName" placeholder="Prénom">
+                        <input type="text" name="LastName" placeholder="Nom">
+                        <input type="text" name="NickName" placeholder="Surnom">
+                        <input type="tel" name="Number01" placeholder="Téléphone No1">
+                        <input type="tel" name="Number02" placeholder="Téléphone No2">
+                        <input type="text" name="Organization" placeholder="Organisation">
+                        <input type="date" name="date" id="date" min="1920-01-01" max="2023-12-31" value="1918-07-22">
+                        <input type="email" name="E-mail" placeholder="E-mail">
+                        <input type="text" name="Addresse" placeholder="Adresse">
+                        <input type="text" name="WebSite" placeholder="Site web">
+                        <button>Enregistrer</button>
+                    </form>
                 </ul>
             </div>
             <div data-role="footer" data-position="fixed">

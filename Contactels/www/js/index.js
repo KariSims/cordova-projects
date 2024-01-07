@@ -1,5 +1,9 @@
 document.addEventListener('deviceready', loadContacts, false);
 
+function createContact(name, phone1,phone2, organization, email){
+    var contact = navigator.contacts.create();
+}
+
 function loadContacts(){
     let options = new ContactFindOptions();
     options.multiple = true;
