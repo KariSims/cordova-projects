@@ -28,6 +28,7 @@
 >>> * swipe right the To Do tasks to move on Done tasks
 >>> * swipe left the tasks to remove
 >>> * swipe right the Done tasks to move on To Do tasks
+>>> * And reset all tasks
 
    ![taskManager](img/taskManager.png "taskManager")
 
@@ -39,5 +40,6 @@
 >>> * swipe right the To Do tasks to move on Done tasks
 >>> * swipe left the tasks to remove
 >>> * swipe right the Done tasks to move on To Do tasks
+>>> * And reset all tasks
 
    ![ToDoList](img/ToDoLists.png "ToDo List")
