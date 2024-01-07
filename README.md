@@ -18,6 +18,7 @@
 >>> * swipe right the Done tasks to move on To Do tasks
 
    ![Contact'Tel](img/spps.png "Contact'Tel")
+   
 
 > ***2. TaskManager***
 >
@@ -31,6 +32,7 @@
 >>> * And reset all tasks
 
    ![taskManager](img/taskManager.png "taskManager")
+
 
 > ***3. ToDo List***
 >
