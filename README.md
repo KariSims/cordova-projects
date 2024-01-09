@@ -2,7 +2,7 @@
 
 ## **Projects : 3**
 
-> **Library : Jquery mobile**
+> **Library for layout : Jquery mobile**
 
 1. Contact'Tel (CRUD App with cordova-plugin-contact)
 2. taskManager (fork of ToDo List with themeroller)
@@ -12,19 +12,19 @@
 >
 >>Features
 >
->>> * Add tasks
->>> * swipe right the To Do tasks to move on Done tasks
->>> * swipe left the tasks to remove
->>> * swipe right the Done tasks to move on To Do tasks
+>>> * Create contact
+>>> * Read all contacts and their details
+>>> * Modify contact infos
+>>> * Delete Contact(s)
 
    ![Contact'Tel](img/spps.png "Contact'Tel")
-   
+
 
 > ***2. TaskManager***
 >
 >>Features
 >
->>> * with themeroller for the layout and theme
+>>> * use themeroller for the layout and theme
 >>> * Add tasks
 >>> * swipe right the To Do tasks to move on Done tasks
 >>> * swipe left the tasks to remove
