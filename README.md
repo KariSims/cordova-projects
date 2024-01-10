@@ -8,7 +8,7 @@
 2. taskManager (fork of ToDo List with themeroller)
 3. ToDo List (Basic App)
 
-> ***1. Contact'Tel***
+> ### ***1. Contact'Tel***
 >
 >>Features
 >
@@ -20,7 +20,7 @@
    ![Contact'Tel](img/spps.png "Contact'Tel")
 
 
-> ***2. TaskManager***
+> ### ***2. TaskManager***
 >
 >>Features
 >
@@ -34,7 +34,7 @@
    ![taskManager](img/taskManager.png "taskManager")
 
 
-> ***3. ToDo List***
+> ### ***3. ToDo List***
 >
 >>Features
 >
