@@ -1,13 +1,5 @@
 document.addEventListener('deviceready', loadContacts, false);
-
-function newContact(){
-    let newContact = document.getElementById('register');
-    newContact.onclick = createContact;
-    
-    //submit and reset form
-    // document.contactForm.submit();
-    // document.contactForm.reset();
-}
+listenElementClick("registerButton");
 
 // function createContact(){
 //     //Create
@@ -47,43 +39,6 @@ function newContact(){
 //     }
 // }
 
-function createContact(){
-    //Create
-
-    var infosContact ={
-        //get infos form
-        name:{
-            givenName: document.getElementById('FirstName').value,
-            familyName: document.getElementById('LastName').value
-        },
-        // displayName : document.getElementById('FirstName').value + ' ' + document.getElementById('LastName').value,
-        nickName : document.getElementById('NickName').value,
-        phoneNumbers : [{
-            type : 'mobile',
-            value: document.getElementById('Number01').value,
-            type : 'work',
-            value: document.getElementById('Number02').value
-        }],
-        organization : document.getElementById('Organization').value,
-        emails : [{
-            type : 'work',
-            value: document.getElementById('E-mail1').value,
-            type : 'other',
-            value: document.getElementById('E-mail2').value
-        }],
-        addresses :[{
-            type:'work',
-            formatted: document.getElementById('Addresse').value,
-            streetAddress:'',    
-            }] 
-    };
-
-    if (infosContact.name && infosContact.phoneNumbers){
-        var contact = navigator.contacts.create(infosContact);
-        contact.save(handleContactSuccess, handleContactError);
-    }
-}
-
 function loadContacts(){
     let options = new ContactFindOptions();
     options.multiple = true;
@@ -92,10 +47,17 @@ function loadContacts(){
     let fields = ['name'];
 
     navigator.contacts.find(fields, showContacts, handleContactError, options);
+    
+    // Ajoutez un gestionnaire d'événement au bouton ou à l'endroit où vous souhaitez déclencher le retour à l'accueil
+    let boutonAccueil = document.getElementById('home');
+    boutonAccueil.addEventListener('click', function(){
+        urlAccueil = 'http://example.com/accueil-android';  
+        // Ouvrir l'écran d'accueil dans le navigateur in-app
+        cordova.InAppBrowser.open(urlAccueil, '_system');
+        });
 }
 
 function showContacts(contacts){
-    // let contactHTML = '';
     let contactItem;
     const contactList = document.getElementById('contactList');
 
@@ -110,7 +72,7 @@ function showContacts(contacts){
         `;
 
         contactItem.onclick = function( ){
-            showContact(contacts);
+            getContact(contact.id);
         }
 
         contactList.appendChild(contactItem);
@@ -133,6 +95,8 @@ function showContact(contacts){
     const contact = contacts[0];
 
     const contactDetail = document.getElementById('contactDetail');
+    const deleteContact = document.getElementById('deleteContact');
+
     let contactInfo = 
         `
         <li>
@@ -160,10 +124,89 @@ function showContact(contacts){
 
     contactDetail.innerHTML = contactInfo;
     $(contactDetail).listview('refresh');
+
+    deleteContact.onclick = function(){
+        getContactDelete(contact.id);
+    };
 }
 
-function handleContactSuccess(contact){
+function createContact(){
+    const phoneNumbers1 = document.getElementById('Number01').value;
+    const phoneNumbers2 = document.getElementById('Number02').value;
+    const email1 = document.getElementById('E-mail1').value;
+    const email2 = document.getElementById('E-mail2').value;
+    const addresse = document.getElementById('Addresse').value;
+    
+    var infosContact ={
+        //get infos form
+        name:{
+            givenName: document.getElementById('FirstName').value,
+            familyName: document.getElementById('LastName').value
+        },
+        // displayName : document.getElementById('FirstName').value + ' ' + document.getElementById('LastName').value,
+        nickName : document.getElementById('NickName').value,
+        phoneNumbers : [],
+        emails : [],
+        organization : document.getElementById('Organization').value,
+        addresses : [],
+    };
+
+    if(phoneNumbers1){
+        infosContact.phoneNumbers.push({type : 'work',value: document.getElementById('Number01').value});
+    }
+    if(phoneNumbers2){
+        infosContact.phoneNumbers.push({type : 'mobile',value: document.getElementById('Number01').value});
+    }
+    if(email1){
+        infosContact.emails.push({type : 'work',value: document.getElementById('E-mail1').value});
+    }
+    if(email2){
+        infosContact.emails.push({type : 'other',value: document.getElementById('E-mail2').value});
+    }
+    if(addresse){
+        infosContact.addresses.push(new ContactAddress('', '', '', '', '', addresse, true));
+    }
+
+    if (infosContact.name && infosContact.phoneNumbers){
+        var contact = navigator.contacts.create(infosContact);
+        contact.save(registerContactSuccess, handleContactError);
+        document.contactForm.reset();
+    }
+}
+
+function getContactDelete(contactId){
+    let options = new ContactFindOptions();
+    options.filter = contactId;
+    options.hasPhoneNumber = true;
+
+    let fields = ['id'];
+
+    navigator.contacts.find(fields, contactfindSuccess, handleContactError, options);
+
+    function contactfindSuccess(contacts) {
+        if (contacts.length > 0) {
+            var contact = contacts[0];
+            contact.remove(contactRemoveSuccess, contactRemoveError);
+        } else {
+            alert("Contact non trouvé");
+        }
+        
+       function contactRemoveSuccess() {
+          alert("Contact supprimé");
+          window.location.href = '#page-contact-list';
+          location.reload();
+       }
+ 
+       function contactRemoveError(message) {
+          alert('Echec de suppression: ' + message);
+       }
+    }     
+}
+
+function registerContactSuccess(contact){
     alert("Contact crée avec succès");
+    window.location.href="#page-contact-list";
+    location.reload();
 }
 
 function handleContactError(error){
