@@ -1,5 +1,5 @@
 document.addEventListener('deviceready', loadContacts, false);
-listenElementClick("registerButton");
+
 
 // function createContact(){
 //     //Create
