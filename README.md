@@ -9,6 +9,7 @@
 3. ToDo List (Basic App)
 4. IMC Calculator (for mobile)
 
+
 > ### ***1. Contact'Tel***
 >
 >>Features
@@ -17,8 +18,9 @@
 >>> * Read all contacts and their details
 >>> * Modify contact infos
 >>> * Delete Contact(s)
+>>> * And themeroller tool for layout
 
-   ![Contact'Tel](img/spps.png "Contact'Tel")
+   ![Contact'Tel](img/Contact.png "Contact'Tel")
 
 
 > ### ***2. TaskManager***
