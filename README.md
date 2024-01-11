@@ -21,6 +21,8 @@
 >>> * And themeroller tool for layout
 
    ![Contact'Tel](img/Contact.png "Contact'Tel")
+   ![Contact'Tel](img/Contact-delete.png "Suppression de contact")
+   ![Contact'Tel](img/Contact-create.png "Creation de contact")
 
 
 > ### ***2. TaskManager***
